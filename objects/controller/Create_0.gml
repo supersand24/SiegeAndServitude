@@ -1,2 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+player[0] = instance_create_layer(0,room_height/2,"Other",hand_controller);
+player[1] = instance_create_layer(room_width,room_height/2,"Other",hand_controller);
+
+player[0].addCard()
+
+selected_card = undefined;

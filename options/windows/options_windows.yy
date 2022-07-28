@@ -1,11 +1,11 @@
 {
-  "option_windows_display_name": "Created with GameMaker",
+  "option_windows_display_name": "Siege & Servitude",
   "option_windows_executable_name": "Siege & Servitude.exe",
   "option_windows_version": "0.0.0.1",
   "option_windows_company_info": "Noctori",
   "option_windows_product_info": "Created with GameMaker",
   "option_windows_copyright_info": "",
-  "option_windows_description_info": "A GameMaker Game",
+  "option_windows_description_info": "A Trading Card Game made with GameMaker.",
   "option_windows_display_cursor": true,
   "option_windows_icon": "${base_options_dir}/windows/icons/icon.ico",
   "option_windows_save_location": 0,

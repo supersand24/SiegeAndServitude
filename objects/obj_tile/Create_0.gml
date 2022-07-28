@@ -1,3 +1,5 @@
+deployed = undefined;
+
 //Used to show if highlighting a tile.
 scale = 3
 
