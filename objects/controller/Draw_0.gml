@@ -11,7 +11,7 @@ var side_border = room_width/2 - (board_length/2)
 draw_set_alpha(0.5)
 for (var i = side_border + (tile_size + tile_spacer); i < board_length; i += tile_size + tile_spacer) {
 	for (var j = top_border; j < room_height; j += tile_size + tile_spacer) {
-		draw_rectangle(i,j,i + tile_size,tile_size + j,false)
+		//draw_rectangle(i,j,i + tile_size,tile_size + j,false)
 	}
 }
 draw_set_alpha(1)
