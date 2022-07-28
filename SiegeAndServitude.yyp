@@ -5,6 +5,7 @@
     {"id":{"name":"obj_tile","path":"objects/obj_tile/obj_tile.yy",},"order":2,},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"order":4,},
     {"id":{"name":"spr_card","path":"sprites/spr_card/spr_card.yy",},"order":1,},
+    {"id":{"name":"Macros","path":"scripts/Macros/Macros.yy",},"order":0,},
     {"id":{"name":"Game","path":"rooms/Game/Game.yy",},"order":1,},
     {"id":{"name":"controller","path":"objects/controller/controller.yy",},"order":0,},
     {"id":{"name":"Test_Room","path":"rooms/Test_Room/Test_Room.yy",},"order":0,},
