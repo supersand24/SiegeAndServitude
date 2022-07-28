@@ -1,8 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
-
+//Tile Scales when hovered over with Mouse.
 if (position_meeting(mouse_x,mouse_y, self)) {
-	scale = 4;
+	if (scale >= max_scale) {
+		scale = max_scale
+	} else {
+		scale += 0.2;
+	}
 } else {
-	scale = 3;
+	if (scale <= min_scale) {
+		scale = min_scale
+	} else {
+		scale -= 0.5;
+	}
 }
