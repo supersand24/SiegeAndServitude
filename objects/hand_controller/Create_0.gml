@@ -2,6 +2,8 @@ hand = [];
 
 //Spawn Deck
 deck = instance_create_layer(25,35,"Table", obj_pile);
+discard = instance_create_layer(25,room_height-35,"Table",obj_pile);
+discard.name = "Discard Pile"
 
 function drawFromDeck(num) {
 	drawn = deck.drawCard(num);
@@ -11,6 +13,12 @@ function drawFromDeck(num) {
 		show_debug_message("Player received a " + string(drawn[i].name) + " from their deck.")
 	}
 	sortCardHeight();
+}
+
+function discardToDiscardPile() {
+	var discarding = [hand[0]]
+	discard.addCards(discarding);
+	deleteCardInHand(0);
 }
 
 function deleteCardInHand(index) {
