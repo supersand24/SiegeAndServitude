@@ -3,3 +3,5 @@
 
 #macro TILE_CARD_MIN_SCALE 0.5;
 #macro TILE_CARD_MAX_SCALE 1;
+
+#macro DEFAULT_DECK_SIZE 60;
