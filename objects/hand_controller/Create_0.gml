@@ -1,3 +1,5 @@
+playerNum = undefined;
+
 hand = [];
 
 //Spawn Deck
@@ -8,9 +10,9 @@ discard.name = "Discard Pile"
 function drawFromDeck(num) {
 	drawn = deck.drawCard(num);
 	for (var i = 0; i < array_length(drawn); i++) {
-		hand[array_length(hand)] = instance_create_layer(-100,-100,"Hand",drawn[i])
+		hand[array_length(hand)] = controller.spawnCard(playerNum,drawn[i])
 		hand[array_length(hand) - 1].index = array_length(hand) - 1
-		show_debug_message("Player received a " + string(drawn[i].name) + " from their deck.")
+		//show_debug_message("Player received a " + string(drawn[i].name) + " from their deck.")
 	}
 	sortCardHeight();
 }

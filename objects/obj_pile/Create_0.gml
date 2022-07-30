@@ -21,7 +21,7 @@ function drawCard(num) {
 		//Make sure there are cards in the stack.
 		if (array_length(stack) > 0) {
 			//Save the card drawn
-			array_push(drawnCards,getCard(stack[array_length(stack) - 1]))
+			array_push(drawnCards,stack[array_length(stack) - 1])
 			//Delete the card from the stack.
 			array_delete(stack,array_length(stack) - 1,1);
 			//Log to Console
