@@ -1,16 +1,8 @@
-player[0] = instance_create_layer(0,room_height/2,"Other",hand_controller);
-//player[1] = instance_create_layer(room_width,room_height/2,"Other",hand_controller);
-
-//Selected Card is for what the mouse is holding.
-selected_card = undefined;
-selected_card_from = undefined;
-selected_card_from_index = undefined;
-
-//array of tiles
-map = [5,5];
-
-//array of border tiles
-border = [2,3];
+function spawnPlayer() {
+	var playerNum = array_length(player);
+	player[playerNum] = instance_create_layer(0,room_height/2,"Other",hand_controller);
+	player[playerNum].playerNum = playerNum;
+}
 
 //function to add all tiles in a loop
 function createTiles() {
@@ -59,3 +51,5 @@ function createTiles() {
 //adds tiles to the map and the room
 createTiles();
 
+//Spawn a player.
+spawnPlayer();
