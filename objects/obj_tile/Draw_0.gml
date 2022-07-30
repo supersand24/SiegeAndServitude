@@ -4,3 +4,4 @@ if (deployed == undefined) {
 } else {
 	draw_sprite_ext(spr_card,0,x,y,scale,scale,0,c_white,1)
 }
+
