@@ -8,9 +8,10 @@ discard = instance_create_layer(25,room_height-35,"Table",obj_pile);
 discard.name = "Discard Pile"
 
 function drawFromDeck(num) {
+	if (num == undefined) num = 1;
 	drawn = deck.drawCard(num);
 	for (var i = 0; i < array_length(drawn); i++) {
-		hand[array_length(hand)] = controller.spawnCard(playerNum,drawn[i])
+		hand[array_length(hand)] = controller.spawnCard(playerNum,drawn[i]);
 		hand[array_length(hand) - 1].index = array_length(hand) - 1
 		//show_debug_message("Player received a " + string(drawn[i].name) + " from their deck.")
 	}

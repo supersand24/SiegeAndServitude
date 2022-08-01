@@ -8,6 +8,10 @@ function spawnPlayer() {
 	player[playerNum].playerNum = playerNum;
 }
 
+function spawnCard(playerNum,card) {
+	return instance_create_layer(-500,-500,"Hand",getCard(card));
+}
+
 //function to add all tiles in a loop
 function createTiles() {
 	//center of the room
