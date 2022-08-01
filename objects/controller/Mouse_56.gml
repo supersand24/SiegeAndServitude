@@ -8,7 +8,9 @@ if (controller.selected_card != undefined) {
 		if (inst.deployed == undefined) {
 			with (inst) {
 				deployed = controller.selected_card;
-				scale = TILE_CARD_MAX_SCALE;
+				image_xscale = TILE_CARD_MAX_SCALE;
+				image_yscale = TILE_CARD_MAX_SCALE;
+				sprite_index = controller.selected_card.sprite_index;
 				min_scale = TILE_CARD_MIN_SCALE;
 				max_scale = TILE_CARD_MAX_SCALE;
 			}

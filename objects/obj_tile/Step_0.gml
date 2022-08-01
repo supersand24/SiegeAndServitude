@@ -6,10 +6,12 @@ if (position_meeting(mouse_x,mouse_y, self)) {
 	} else {
 		var max_scale = TILE_CARD_MAX_SCALE;
 	}
-	if (scale >= max_scale) {
-		scale = max_scale
+	if (image_xscale >= max_scale) {
+		image_xscale = max_scale
+		image_yscale = max_scale
 	} else {
-		scale += 0.2;
+		image_xscale += 0.2;
+		image_yscale += 0.2;
 	}
 } else {
 	var min_scale;
@@ -18,9 +20,11 @@ if (position_meeting(mouse_x,mouse_y, self)) {
 	} else {
 		var min_scale = TILE_CARD_MIN_SCALE;
 	}
-	if (scale <= min_scale) {
-		scale = min_scale
+	if (image_xscale <= min_scale) {
+		image_xscale = min_scale
+		image_yscale = min_scale
 	} else {
-		scale -= 0.5;
+		image_xscale -= 0.5;
+		image_yscale -= 0.5;
 	}
 }
