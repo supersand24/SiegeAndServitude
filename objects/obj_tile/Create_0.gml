@@ -9,6 +9,10 @@ image_yscale = TILE_EMPTY_MIN_SCALE;
 min_scale = TILE_EMPTY_MIN_SCALE;
 max_scale = TILE_EMPTY_MAX_SCALE;
 
+//For animating the info box to zoom out.
+infoBox_scale = 5;
+infoBox_max_scale = 5;
+
 //map location
 map_x = undefined
 map_y = undefined

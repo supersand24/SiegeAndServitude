@@ -1,6 +1,8 @@
 map = [5,5];
 border = [2,3];
 
+infoBox = undefined;
+showInfoBox = false;
 
 function spawnPlayer() {
 	var playerNum = array_length(player);
