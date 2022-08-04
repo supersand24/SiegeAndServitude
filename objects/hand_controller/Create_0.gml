@@ -3,8 +3,8 @@ playerNum = undefined;
 hand = [];
 
 //Spawn Deck
-deck = instance_create_layer(25,35,"Table", obj_pile);
-discard = instance_create_layer(25,room_height-35,"Table",obj_pile);
+deck = instance_create_layer(5,room_height-5,"Table", obj_pile);
+discard = instance_create_layer(50,room_height-5,"Table",obj_pile);
 discard.name = "Discard Pile"
 
 function drawFromDeck(num) {
@@ -44,7 +44,7 @@ function sortCardHeight() {
 	for (var i = 0; i < array_length(hand); i++) {
 		with (hand[i]) {
 			x = 10
-			y = room_height - (i + 1)*(room_height/(array_length(hand_controller.hand)+1));
+			y = room_height - (i + 1)*(room_height/(array_length(hand_controller.hand)+1)) + 150;
 		}
 	}
 }

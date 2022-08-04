@@ -1,6 +1,3 @@
-//current card selected by player
-selected_card = undefined;
-
 //Used to show if highlighting a card.
 x_offset = 0;
 
