@@ -64,6 +64,8 @@ function createTiles() {
 	for (var i = 0; i < FH; i++) {
 		for (var j = 0; j < FW; j++) {
 			map[i,j] = instance_create_layer(currentX, currentY, "Tile", obj_tile);
+			map[i,j].map_x = i;
+			map[i,j].map_y = j;
 			currentX = currentX + hDis;
 		}
 		currentY = currentY + vDis;
@@ -86,6 +88,8 @@ function createBackLine(fieldCenterX, fieldCenterY, hDis, vDis) {
 	for (var i = 0; i < 3; i++) {
 		for (var j = 0; j < 2; j++) {
 			border[i,j] = instance_create_layer(currentX, currentY, "Tile", obj_tile);
+			border[i,j].map_x = i;
+			border[i,j].map_y = j;
 			currentX = fieldCenterX + borderHorDisplace;
 		}
 		currentY = currentY + verticalDis;
@@ -94,11 +98,61 @@ function createBackLine(fieldCenterX, fieldCenterY, hDis, vDis) {
 	
 }
 	
-
+//Spawn a player.
 spawnPlayer();
 
 //adds tiles to the map and the room
 createTiles();
 
-//Spawn a player.
-//spawnPlayer();
+
+function unit_move() {
+	if (selected_tile != undefined) {
+		if (selected_tile.deployed != undefined) {
+			
+	var temp_tile;
+	var start_x = selected_tile.map_x;
+	var start_y = selected_tile.map_y;
+	
+	for (var i = 0; i < 3; i++) {
+		var x_dif;
+		switch (i) {
+			case 0:
+			x_dif = -1;
+			break;
+			case 1:
+			x_dif = 0;
+			break;
+			case 2:
+			x_dif = 1;
+			break;
+		}
+		for (var j = 0; j < 3; j++) {
+			var y_dif;
+			switch (j) {
+				case 0:
+					y_dif = -1;
+				break;
+				case 1:
+					y_dif = 0;
+				break;
+				case 2:
+					y_dif = 1;
+				break;
+			}
+			try {
+				temp_tile = map[start_x+x_dif, start_y+y_dif];
+				if (temp_tile != selected_tile) {
+					temp_tile.movable(true);
+				}
+			} catch (error) {
+				show_debug_message("tried to check for off screen tiles");
+			}
+		}
+	}
+
+		}
+	}
+}
+
+
+

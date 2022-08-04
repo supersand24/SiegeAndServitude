@@ -14,5 +14,23 @@ infoBox_scale = 5;
 infoBox_max_scale = 5;
 
 //map location
-map_x = undefined
-map_y = undefined
+map_x = undefined;
+map_y = undefined;
+
+movable_to = false;
+
+function movable(bool) {
+	if (bool == undefined) {
+	movable_to = !movable_to;
+	}
+	else {
+		movable_to = bool;
+	}
+	if (movable_to) {
+		image_blend = c_yellow;
+	} else {
+		image_blend = c_white;
+	}
+	
+}
+		

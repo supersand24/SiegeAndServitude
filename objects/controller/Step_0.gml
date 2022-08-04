@@ -3,3 +3,7 @@ var inst = instance_position(mouse_x,mouse_y, obj_tile);
 if (inst != noone) {
 	infoBox = inst.deployed;
 }
+
+if (selected_tile != undefined) {
+		
+}

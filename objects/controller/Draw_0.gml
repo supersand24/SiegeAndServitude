@@ -10,3 +10,13 @@ if (showInfoBox) {
 		draw_text(mouse_x,mouse_y,infoBox.name);
 	}
 }
+
+if (selected_tile != undefined) {
+	with (selected_tile) {
+		draw_circle_color(x, y, 50, c_green, c_green, false);
+		draw_self();
+	}
+}
+
+
+
