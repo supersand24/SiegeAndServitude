@@ -1,7 +1,7 @@
 /// @description Drop Held Card
 
 //Get the tile at mouse posistion.
-if (controller.selected_card != undefined) {
+if (selected_card != undefined) {
 	var inst = instance_position(mouse_x,mouse_y,obj_tile)
 	if (inst != noone)
 	{
@@ -13,6 +13,10 @@ if (controller.selected_card != undefined) {
 				sprite_index = controller.selected_card.sprite_index;
 				min_scale = TILE_CARD_MIN_SCALE;
 				max_scale = TILE_CARD_MAX_SCALE;
+				
+				if (deployed.type == CARD_TYPE.LEADER) {
+					show_debug_message("Leader Card was placed!");
+				}
 			}
 			player[selected_card_from].deleteCardInHand(selected_card_from_index);
 		}

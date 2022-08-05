@@ -71,8 +71,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "cards",
-    "path": "folders/Sprites/cards.yy",
+    "name": "Cards",
+    "path": "folders/Sprites/Cards.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_card_back",

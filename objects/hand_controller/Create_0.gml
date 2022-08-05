@@ -2,18 +2,13 @@ playerNum = undefined;
 
 hand = [];
 
-//Spawn Deck
-deck = instance_create_layer(5,room_height-5,"Table", obj_pile);
-discard = instance_create_layer(50,room_height-5,"Table",obj_pile);
-discard.name = "Discard Pile"
-
 function drawFromDeck(num) {
 	if (num == undefined) num = 1;
 	drawn = deck.drawCard(num);
 	for (var i = 0; i < array_length(drawn); i++) {
 		hand[array_length(hand)] = controller.spawnCard(playerNum,drawn[i]);
 		hand[array_length(hand) - 1].index = array_length(hand) - 1
-		//show_debug_message("Player received a " + string(drawn[i].name) + " from their deck.")
+		show_debug_message(string(name) + " received a " + string(drawn[i].name) + " from their " + string(deck.name) + ".")
 	}
 	sortCardHeight();
 }
@@ -48,3 +43,22 @@ function sortCardHeight() {
 		}
 	}
 }
+
+//Spawn Deck, and give deck cards.
+deck = instance_create_layer(5,room_height-5,"Table", obj_pile);
+deck.name = "Deck";
+with (deck) {
+	var deck_size = DEFAULT_DECK_SIZE;
+	for (var i = 0; i < deck_size; i++) {
+		array_push(stack,0);
+	}
+}
+
+//Spawn Discard
+discard = instance_create_layer(50,room_height-5,"Table",obj_pile);
+discard.name = "Discard Pile"
+
+//Spawn Leader
+hand[0] = controller.spawnCard(playerNum, 1);
+hand[0].index = 0;
+sortCardHeight();

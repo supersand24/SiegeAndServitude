@@ -1,13 +1,6 @@
 //Initalize Empty Array
 stack = [];
 
-//Start deck with generic cards.
-//Will probably load cards from a save file on local machine.
-var deck_size = DEFAULT_DECK_SIZE;
-for (var i = 0; i < deck_size; i++) {
-	array_push(stack,0);
-}
-
 //Functions
 
 /// @function			drawCard(num);

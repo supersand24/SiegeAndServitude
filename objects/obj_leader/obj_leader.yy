@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_leader",
+    "path": "sprites/spr_leader/spr_leader.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

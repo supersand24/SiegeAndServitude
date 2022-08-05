@@ -1,7 +1,7 @@
 //Show held card, if card is held.
 if (selected_card != undefined) {
 	var selected_card_scale = TILE_CARD_MIN_SCALE;
-	draw_sprite_ext(spr_card,0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1)
+	draw_sprite_ext(selected_card.sprite_index,0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1)
 }
 
 if (showInfoBox) {
@@ -18,5 +18,9 @@ if (selected_tile != undefined) {
 	}
 }
 
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle)
 
-
+switch(phase) {
+	case GAME_PHASE.PREP: draw_text(x,(y-50),"PREP PHASE"); break;
+}
