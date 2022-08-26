@@ -1,3 +1,2 @@
-/// @description Testing Only
-
+/// @description Draw Card
 player[0].drawFromDeck();

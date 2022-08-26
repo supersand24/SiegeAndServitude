@@ -1,4 +1,2 @@
-/// @description move for the slected tile
-// You can write your code in this editor
+/// @description Move for the selected tile.
 unit_move();
-

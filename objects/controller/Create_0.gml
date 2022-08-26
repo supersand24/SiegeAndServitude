@@ -1,11 +1,13 @@
-map = [5,5];
-border = [2,3];
-
-infoBox = undefined;
-showInfoBox = false;
+//Is the instance id of a selected item.
+selected = noone;
 
 enum GAME_PHASE {
 	PREP
+}
+
+enum SELECTED_TYPE {
+	CARD,
+	TILE
 }
 
 phase = GAME_PHASE.PREP;
@@ -111,12 +113,12 @@ spawnPlayer();
 createTiles();
 
 function unit_move() {
-	if (selected_tile != undefined) {
-		if (selected_tile.deployed != undefined) {
+	if (selected != undefined) {
+		if (selected.deployed != undefined) {
 			
 			var temp_tile;
-			var start_x = selected_tile.map_x;
-			var start_y = selected_tile.map_y;
+			var start_x = selected.map_x;
+			var start_y = selected.map_y;
 	
 			for (var i = 0; i < 3; i++) {
 				var x_dif;
@@ -146,7 +148,7 @@ function unit_move() {
 					}
 					try {
 						temp_tile = map[start_x+x_dif, start_y+y_dif];
-						if (temp_tile != selected_tile) {
+						if (temp_tile != selected) {
 							temp_tile.movable(true);
 						}
 					} catch (error) {
@@ -157,4 +159,22 @@ function unit_move() {
 
 		}
 	}
+}
+
+function getSelected() {
+	//See if there is anything selected, if not stop.
+	if (selected == noone) return "nothing"
+	//Get name of object that is selected.
+	var selectedName = object_get_name(selected.object_index);
+	
+	//See if clicked on a tile.
+	if (selectedName == "obj_tile") {
+		return SELECTED_TYPE.TILE;
+	}
+	
+	//See if object is a card.
+	if (string_pos("card",selectedName) != 0) {
+		return SELECTED_TYPE.CARD;
+	}
+
 }

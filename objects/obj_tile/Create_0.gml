@@ -21,9 +21,8 @@ movable_to = false;
 
 function movable(bool) {
 	if (bool == undefined) {
-	movable_to = !movable_to;
-	}
-	else {
+		movable_to = !movable_to;
+	} else {
 		movable_to = bool;
 	}
 	if (movable_to) {
@@ -31,6 +30,5 @@ function movable(bool) {
 	} else {
 		image_blend = c_white;
 	}
-	
 }
 		

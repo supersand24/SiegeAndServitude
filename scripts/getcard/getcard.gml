@@ -2,9 +2,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function getCard(num){
 	
-	switch (num) {
-		case 0: return obj_card; break;
-		case 1: return obj_leader break;
-	}
+	return asset_get_index("card" + string(num));
 
 }
