@@ -19,7 +19,7 @@ if (movable_to) {
 	min_scale = TILE_CARD_MIN_SCALE;
 	max_scale = TILE_CARD_MAX_SCALE;
 
-	controller.selected_tile.deployed = undefined;
+	controller.selected_tile.deployed = noone;
 }
 
 

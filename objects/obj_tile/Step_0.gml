@@ -1,7 +1,7 @@
 //Tile Scales when hovered over with Mouse.
 if (position_meeting(mouse_x,mouse_y, self)) {
 	var max_scale;
-	if (deployed == undefined) {
+	if (deployed == noone) {
 		var max_scale = TILE_EMPTY_MAX_SCALE;
 	} else {
 		var max_scale = TILE_CARD_MAX_SCALE;
@@ -16,7 +16,7 @@ if (position_meeting(mouse_x,mouse_y, self)) {
 	}
 } else {
 	var min_scale;
-	if (deployed == undefined) {
+	if (deployed == noone) {
 		var min_scale = TILE_EMPTY_MIN_SCALE;
 	} else {
 		var min_scale = TILE_CARD_MIN_SCALE;

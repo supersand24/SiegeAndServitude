@@ -1,5 +1,5 @@
 //card in the tile
-deployed = undefined;
+deployed = noone;
 
 //Used to show if highlighting a tile.
 image_xscale = TILE_EMPTY_MIN_SCALE;
@@ -8,10 +8,6 @@ image_yscale = TILE_EMPTY_MIN_SCALE;
 //Ensures Scale never gets too big/small.
 min_scale = TILE_EMPTY_MIN_SCALE;
 max_scale = TILE_EMPTY_MAX_SCALE;
-
-//For animating the info box to zoom out.
-infoBox_scale = 5;
-infoBox_max_scale = 5;
 
 //map location
 map_x = undefined;
@@ -31,4 +27,12 @@ function movable(bool) {
 		image_blend = c_white;
 	}
 }
-		
+
+function setCard(card,forced = false) {
+	deployed = card;
+	image_xscale = TILE_CARD_MAX_SCALE;
+	image_yscale = TILE_CARD_MAX_SCALE;
+	min_scale = TILE_CARD_MIN_SCALE;
+	max_scale = TILE_CARD_MAX_SCALE;
+	sprite_index = card.sprite_index;
+}

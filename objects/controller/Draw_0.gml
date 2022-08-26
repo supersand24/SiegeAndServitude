@@ -11,14 +11,31 @@
 //	}
 //}
 
-//Draw Text at Bottom of Screen.
+//Draws currently selected card.
+if (selected != noone) {
+	var selected_card_scale = TILE_CARD_MIN_SCALE;
+	switch(getSelected()) {
+		case SELECTED_TYPE.CARD:
+			draw_sprite_ext(selected.sprite_index,0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
+		break;
+		case SELECTED_TYPE.TILE:
+			if (selected.deployed != noone) {
+				draw_sprite_ext(selected.deployed.sprite_index,0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
+			}
+		break;
+	}
+}
+
+//Draws Various Text at Bottom of Screen.
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle)
 
+//Game Phase
 switch(phase) {
 	case GAME_PHASE.PREP: draw_text(x,(y-50),"PREP PHASE"); break;
 }
 
+//Testing Only - Selected Card
 if (selected == noone) {
 	draw_text(x,y-30,"Nothing Selected.");
 } else {
