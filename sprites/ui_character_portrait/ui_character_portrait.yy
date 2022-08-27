@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "UI",
-    "path": "folders/Sprites/UI.yy",
+    "path": "folders/UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "ui_character_portrait",

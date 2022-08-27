@@ -33,7 +33,7 @@
   ],
   "parent": {
     "name": "Cards",
-    "path": "folders/Objects/Cards.yy",
+    "path": "folders/Cards.yy",
   },
   "resourceVersion": "1.0",
   "name": "card1",

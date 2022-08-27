@@ -72,7 +72,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Cards",
-    "path": "folders/Sprites/Cards.yy",
+    "path": "folders/Cards.yy",
   },
   "resourceVersion": "1.0",
   "name": "card1_art",
