@@ -29,7 +29,6 @@
   "overriddenProperties": [
     {"propertyId":{"name":"name","path":"objects/card0/card0.yy",},"objectId":{"name":"card0","path":"objects/card0/card0.yy",},"value":"\"Bob with a Hat\"","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"type","path":"objects/card0/card0.yy",},"objectId":{"name":"card0","path":"objects/card0/card0.yy",},"value":"CARD_TYPE.LEADER","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"index","path":"objects/card0/card0.yy",},"objectId":{"name":"card0","path":"objects/card0/card0.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Cards",

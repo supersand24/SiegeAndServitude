@@ -19,20 +19,23 @@ function discardToDiscardPile() {
 	deleteCardInHand(0);
 }
 
-function deleteCardInHand(index) {
-	//Destroy the card from the room.
-	instance_destroy(hand[index])
-	
-	//Remove any reference from the array.
-	array_delete(hand,index, 1)
-	
-	//Refresh Index Reference on all cards.
-	for (var c = index; c < array_length(hand); c++) {
-		hand[c].index = c;
+//Deletes the Game Object and the reference in Player Hand, and also resorts the card height.
+//Returns true, if the operation was successful.
+//Returns false, if the card could not be found in the player hand.
+function deleteCardInHand(card) {
+	for (var i = 0; i < array_length(hand); i++) {
+		show_debug_message(hand[i].id);
+		if (card.id == hand[i].id) {
+			//Remove the reference from the hand array.
+			array_delete(hand,i,1);
+			//Delete the Game Object
+			instance_destroy(card);
+			//Resort Card Height
+			sortCardHeight();
+			return true;
+		}
 	}
-	
-	//Resort Card Height
-	sortCardHeight();
+	return false;
 }
 
 function sortCardHeight() {	

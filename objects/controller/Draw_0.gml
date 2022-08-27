@@ -40,5 +40,5 @@ if (selected == noone) {
 	draw_text(x,y-30,"Nothing Selected.");
 } else {
 	draw_text(x,y-30,getSelected());
-	draw_text(x,y-10,selected);
+	draw_text(x,y-10,selected.id);
 }
