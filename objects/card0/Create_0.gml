@@ -21,3 +21,8 @@ enum CARD_EFFECTS {
 //weapon skill enum
 enum WEAPON_SKILLS {
 }
+
+//Grabs the id from the object name.
+function getId() {
+	return real(string_copy(object_get_name(object_index),5,10));
+}

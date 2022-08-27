@@ -20,7 +20,7 @@ if (selected != noone) {
 		break;
 		case SELECTED_TYPE.TILE:
 			if (selected.deployed != noone) {
-				draw_sprite_ext(selected.deployed.sprite_index,0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
+				draw_sprite_ext(asset_get_index("card" + string(selected.deployed) + "_art"),0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
 			}
 		break;
 	}
