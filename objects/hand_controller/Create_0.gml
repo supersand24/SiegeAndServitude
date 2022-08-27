@@ -24,7 +24,6 @@ function discardToDiscardPile() {
 //Returns false, if the card could not be found in the player hand.
 function deleteCardInHand(card) {
 	for (var i = 0; i < array_length(hand); i++) {
-		show_debug_message(hand[i].id);
 		if (card.id == hand[i].id) {
 			//Remove the reference from the hand array.
 			array_delete(hand,i,1);
