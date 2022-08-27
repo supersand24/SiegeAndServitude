@@ -2,18 +2,19 @@ playerNum = undefined;
 
 hand = [];
 
-function drawFromDeck(num) {
-	if (num == undefined) num = 1;
+handBoundsTop = 125;
+handBoundsBot = room_height-75;
+
+function drawFromDeck(num = 1) {
 	drawn = deck.drawCard(num);
 	for (var i = 0; i < array_length(drawn); i++) {
-		hand[array_length(hand)] = controller.spawnCard(playerNum,drawn[i]);
-		hand[array_length(hand) - 1].index = array_length(hand) - 1
+		array_push(hand,controller.spawnCard(playerNum,drawn[i]));
 		show_debug_message(string(name) + " received a " + string(drawn[i].name) + " from their " + string(deck.name) + ".")
 	}
 	sortCardHeight();
 }
 
-function discardToDiscardPile() {
+function discardToDiscardPile(card) {
 	var discarding = [hand[0]]
 	discard.addCards(discarding);
 	deleteCardInHand(0);
@@ -37,13 +38,25 @@ function deleteCardInHand(card) {
 	return false;
 }
 
-function sortCardHeight() {	
-	for (var i = 0; i < array_length(hand); i++) {
-		with (hand[i]) {
-			x = 10
-			y = room_height - (i + 1)*(room_height/(array_length(hand_controller.hand)+1)) + 150;
+function sortCardHeight() {
+	show_debug_message("Sorting Cards");
+	var len = array_length(hand);
+	if (len > 1) {
+		//show_message("CASE 1");
+		for (var i = 1; i < len+1; i++) {
+			//show_debug_message(handBoundsTop + (handBoundsBot-handBoundsTop)/len*i);
+			hand[i-1].y = handBoundsTop + (handBoundsBot-handBoundsTop)/(len+1)*i;
+			hand[i-1].x = 5;
+			show_debug_message("X:" + string(hand[i-1].x) + " Y:" + string(hand[i-1].y));
 		}
+	} else {
+		//show_message("CASE 2");
+		//if (len != 0) {
+			hand[0].y = (handBoundsBot-handBoundsTop)/2 + handBoundsTop;
+			hand[0].x = 5;
+		//}
 	}
+	show_debug_message("==========================");
 }
 
 //Spawn Deck, and give deck cards.
@@ -62,5 +75,4 @@ discard.name = "Discard Pile"
 
 //Spawn Leader
 hand[0] = controller.spawnCard(playerNum, 1);
-hand[0].index = 0;
 sortCardHeight();

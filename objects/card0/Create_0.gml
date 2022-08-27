@@ -5,6 +5,9 @@ x_offset = 0;
 min_x_offset = x_offset;
 max_x_offset = 20;
 
+image_xscale = 0.5;
+image_yscale = 0.5;
+
 //card type enum
 enum CARD_TYPE {
 	LEADER,
