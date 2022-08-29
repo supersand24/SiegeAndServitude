@@ -39,24 +39,18 @@ function deleteCardInHand(card) {
 }
 
 function sortCardHeight() {
-	show_debug_message("Sorting Cards");
 	var len = array_length(hand);
-	if (len > 1) {
-		//show_message("CASE 1");
-		for (var i = 1; i < len+1; i++) {
-			//show_debug_message(handBoundsTop + (handBoundsBot-handBoundsTop)/len*i);
-			hand[i-1].y = handBoundsTop + (handBoundsBot-handBoundsTop)/(len+1)*i;
-			hand[i-1].x = 5;
-			show_debug_message("X:" + string(hand[i-1].x) + " Y:" + string(hand[i-1].y));
-		}
-	} else {
-		//show_message("CASE 2");
-		//if (len != 0) {
+	if (len > 0) {
+		if (len == 1) {
 			hand[0].y = (handBoundsBot-handBoundsTop)/2 + handBoundsTop;
 			hand[0].x = 5;
-		//}
+		} else {
+			for (var i = 1; i < len+1; i++) {
+				hand[i-1].y = handBoundsTop + (handBoundsBot-handBoundsTop)/(len+1)*i;
+				hand[i-1].x = 5;
+			}
+		}
 	}
-	show_debug_message("==========================");
 }
 
 //Spawn Deck, and give deck cards.

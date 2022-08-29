@@ -6,6 +6,7 @@ enum GAME_PHASE {
 }
 
 enum SELECTED_TYPE {
+	NOTHING,
 	CARD,
 	TILE
 }
@@ -71,7 +72,7 @@ function createTiles() {
 	
 	for (var i = 0; i < FH; i++) {
 		for (var j = 0; j < FW; j++) {
-			map[i,j] = instance_create_layer(currentX, currentY, "Tile", obj_tile);
+			map[i,j] = instance_create_layer(currentX, currentY, "Table", obj_tile);
 			map[i,j].map_x = i;
 			map[i,j].map_y = j;
 			currentX = currentX + hDis;
@@ -95,7 +96,7 @@ function createBackLine(fieldCenterX, fieldCenterY, hDis, vDis) {
 	
 	for (var i = 0; i < 3; i++) {
 		for (var j = 0; j < 2; j++) {
-			border[i,j] = instance_create_layer(currentX, currentY, "Tile", obj_tile);
+			border[i,j] = instance_create_layer(currentX, currentY, "Table", obj_tile);
 			border[i,j].map_x = i;
 			border[i,j].map_y = j;
 			currentX = fieldCenterX + borderHorDisplace;
@@ -163,7 +164,7 @@ function unit_move() {
 
 function getSelected() {
 	//See if there is anything selected, if not stop.
-	if (selected == noone) return "nothing"
+	if (selected == noone) return SELECTED_TYPE.NOTHING;
 	//Get name of object that is selected.
 	var selectedName = object_get_name(selected.object_index);
 	
