@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "card0_art",
-    "path": "sprites/card0_art/card0_art.yy",
+    "name": "card0",
+    "path": "sprites/card0/card0.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,11 +27,12 @@
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
+    {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"card_id","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":2,"value":"\"Bob\"","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"name","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":1,"value":"1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"move","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":4,"value":"CARD_TYPE.UNIT","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"type","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":1,"value":"1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"move","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":1,"value":"10","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hp","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":1,"value":"10","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"attack","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":1,"value":"10","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"atk","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":1,"value":"10","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"def","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"10","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"magDef","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":4,"value":"undefined","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"location","tags":[],"resourceType":"GMObjectProperty",},
@@ -39,11 +40,11 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Cards",
-    "path": "folders/Cards.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "card0",
+  "name": "obj_card",
   "tags": [],
   "resourceType": "GMObject",
 }

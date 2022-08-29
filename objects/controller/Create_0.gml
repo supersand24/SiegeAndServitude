@@ -13,14 +13,27 @@ enum SELECTED_TYPE {
 
 phase = GAME_PHASE.PREP;
 
+loadCardDatabase();
+
 function spawnPlayer() {
 	var playerNum = array_length(player);
 	player[playerNum] = instance_create_layer(0,room_height/2,"Other",hand_controller);
 	player[playerNum].playerNum = playerNum;
 }
 
-function spawnCard(playerNum,card) {
-	return instance_create_layer(-500,-500,"Hand",getCard(card));
+function spawnCard(playerNum,cardID) {
+	//return instance_create_layer(-500,-500,"Hand",getCard(card));
+	return instance_create_layer(-500,-500,"Other",obj_card,
+	{
+		card_id : cardID,
+		name : global.cardDatabase[# cardID, 1],
+		type : global.cardDatabase[# cardID, 2],
+		movement : global.cardDatabase[# cardID, 3],
+		hp : global.cardDatabase[# cardID, 4],
+		atk : global.cardDatabase[# cardID, 5],
+		def : global.cardDatabase[# cardID, 6],
+		magDef : global.cardDatabase[# cardID, 7]
+	});
 }
 
 //function to add all tiles in a loop

@@ -9,7 +9,7 @@ if (position_meeting(mouse_x,mouse_y, self)) {
 	if (image_xscale >= max_scale) {
 		image_xscale = max_scale
 		image_yscale = max_scale
-		depth = layer_get_depth(layer_get_id("Tile")) - 1;
+		depth = layer_get_depth(layer_get_id("Table")) - 1;
 	} else {
 		image_xscale += 0.2;
 		image_yscale += 0.2;
@@ -24,7 +24,7 @@ if (position_meeting(mouse_x,mouse_y, self)) {
 	if (image_xscale <= min_scale) {
 		image_xscale = min_scale
 		image_yscale = min_scale
-		depth = layer_get_depth(layer_get_id("Tile"));
+		depth = layer_get_depth(layer_get_id("Table"));
 	} else {
 		image_xscale -= 0.5;
 		image_yscale -= 0.5;

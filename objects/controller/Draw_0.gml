@@ -16,11 +16,11 @@ if (selected != noone) {
 	var selected_card_scale = TILE_CARD_MIN_SCALE;
 	switch(getSelected()) {
 		case SELECTED_TYPE.CARD:
-			draw_sprite_ext(selected.sprite_index,0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
+			draw_sprite_ext(asset_get_index("card" + string(selected.card_id)),0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
 		break;
 		case SELECTED_TYPE.TILE:
 			if (selected.deployed != noone) {
-				draw_sprite_ext(asset_get_index("card" + string(selected.deployed) + "_art"),0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
+				draw_sprite_ext(asset_get_index("card" + string(selected.deployed)),0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
 			}
 		break;
 	}

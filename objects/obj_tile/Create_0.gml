@@ -51,7 +51,7 @@ function updateSprite() {
 		min_scale = TILE_EMPTY_MIN_SCALE;
 		max_scale = TILE_EMPTY_MAX_SCALE;
 	} else {
-		sprite_index = asset_get_index("card" + string(deployed) + "_art");
+		sprite_index = asset_get_index("card" + string(deployed));
 		image_xscale = TILE_CARD_MAX_SCALE;
 		image_yscale = TILE_CARD_MAX_SCALE;
 		min_scale = TILE_CARD_MIN_SCALE;

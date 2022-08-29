@@ -6,7 +6,7 @@ if (tileAtMousePos != noone) {
 	switch(getSelected()) {
 		case SELECTED_TYPE.CARD:
 			//Get the tile the mouse is hovering.
-			if (tileAtMousePos.setCard(selected.getId())) {
+			if (tileAtMousePos.setCard(selected.card_id)) {
 					//Card was able to be played.
 					if (player[0].deleteCardInHand(selected)) {
 						//Card was deleted, continue game actions.
