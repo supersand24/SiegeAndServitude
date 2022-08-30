@@ -28,9 +28,7 @@ function deleteCardInHand(card) {
 		if (card.id == hand[i].id) {
 			//Remove the reference from the hand array.
 			array_delete(hand,i,1);
-			//Remove Card from field.
-			card.x = -500;
-			card.y = -500;
+			card.image_angle = 0;
 			//Resort Card Height
 			sortCardHeight();
 			return true;
@@ -71,4 +69,5 @@ discard.name = "Discard Pile"
 
 //Spawn Leader
 hand[0] = controller.spawnCard(playerNum, 1);
+//hand[0] = CARD_LOCATION.HAND;
 sortCardHeight();

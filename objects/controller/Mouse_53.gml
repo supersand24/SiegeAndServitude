@@ -6,6 +6,3 @@ for (var i = 0; i < array_length(map); i++) {
 		map[i,j].movable(false);
 	}
 }
-
-//Grab any card or tile.
-selected = instance_position(mouse_x, mouse_y, all);

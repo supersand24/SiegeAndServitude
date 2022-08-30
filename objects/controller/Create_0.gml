@@ -174,21 +174,3 @@ function unit_move() {
 		}
 	}
 }
-
-function getSelected() {
-	//See if there is anything selected, if not stop.
-	if (selected == noone) return SELECTED_TYPE.NOTHING;
-	//Get name of object that is selected.
-	var selectedName = object_get_name(selected.object_index);
-	
-	//See if clicked on a tile.
-	if (selectedName == "obj_tile") {
-		return SELECTED_TYPE.TILE;
-	}
-	
-	//See if object is a card.
-	if (string_pos("card",selectedName) != 0) {
-		return SELECTED_TYPE.CARD;
-	}
-
-}

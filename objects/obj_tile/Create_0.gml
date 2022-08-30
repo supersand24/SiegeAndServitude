@@ -33,7 +33,15 @@ function setCard(card,forced = false) {
 	if (!forced) {
 		if deployed != noone return false;
 	}
+	if (card.location != undefined) {
+		controller.map[card.map_x,card.map_y].deployed = noone;
+	}
 	deployed = card;
+	card.x = x;
+	card.y = y;
+	card.map_x = map_x;
+	card.map_y = map_y;
+	card.location = CARD_LOCATION.FIELD;
 	updateSprite();
 	return true;
 }
@@ -45,13 +53,13 @@ function removeCard() {
 
 function updateSprite() {
 	if (deployed == noone) {
-		sprite_index = spr_tile;
+		//sprite_index = spr_tile;
 		image_xscale = TILE_EMPTY_MAX_SCALE;
 		image_yscale = TILE_EMPTY_MAX_SCALE;
 		min_scale = TILE_EMPTY_MIN_SCALE;
 		max_scale = TILE_EMPTY_MAX_SCALE;
 	} else {
-		sprite_index = asset_get_index("card" + string(deployed.card_id));
+		//sprite_index = asset_get_index("card" + string(deployed.card_id));
 		image_xscale = TILE_CARD_MAX_SCALE;
 		image_yscale = TILE_CARD_MAX_SCALE;
 		min_scale = TILE_CARD_MIN_SCALE;
