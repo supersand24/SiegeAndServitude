@@ -58,8 +58,7 @@ deck.name = "Deck";
 with (deck) {
 	var deck_size = DEFAULT_DECK_SIZE;
 	for (var i = 0; i < deck_size; i++) {
-		//array_push(stack,0);
-		//controller.spawnCard(playerNum, 0);
+		array_push(stack,0);
 	}
 }
 
