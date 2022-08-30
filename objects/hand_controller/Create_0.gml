@@ -69,5 +69,5 @@ discard.name = "Discard Pile"
 
 //Spawn Leader
 hand[0] = controller.spawnCard(playerNum, 1);
-//hand[0] = CARD_LOCATION.HAND;
+leader_card = hand[0];
 sortCardHeight();
