@@ -26,13 +26,17 @@ function spawnCard(playerNum,cardID) {
 	return instance_create_layer(-500,-500,"Other",obj_card,
 	{
 		card_id : cardID,
-		name : global.cardDatabase[# cardID, 1],
-		type : global.cardDatabase[# cardID, 2],
-		movement : global.cardDatabase[# cardID, 3],
-		hp : global.cardDatabase[# cardID, 4],
-		atk : global.cardDatabase[# cardID, 5],
-		def : global.cardDatabase[# cardID, 6],
-		magDef : global.cardDatabase[# cardID, 7]
+		name : global.cardDatabase[# 0, cardID],
+		type : global.cardDatabase[# 1, cardID],
+		movement : real(global.cardDatabase[# 2, cardID]),
+		hp : real(global.cardDatabase[# 3, cardID]),
+		max_hp : real(global.cardDatabase[# 3, cardID]),
+		atk : real(global.cardDatabase[# 4, cardID]),
+		base_atk : real(global.cardDatabase[# 4, cardID]),
+		def : real(global.cardDatabase[# 5, cardID]),
+		base_def : real(global.cardDatabase[# 5, cardID]),
+		magDef : real(global.cardDatabase[# 6, cardID]),
+		base_magDef : real(global.cardDatabase[# 6, cardID])
 	});
 }
 
