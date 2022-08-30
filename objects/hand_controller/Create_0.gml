@@ -28,8 +28,9 @@ function deleteCardInHand(card) {
 		if (card.id == hand[i].id) {
 			//Remove the reference from the hand array.
 			array_delete(hand,i,1);
-			//Delete the Game Object
-			instance_destroy(card);
+			//Remove Card from field.
+			card.x = -500;
+			card.y = -500;
 			//Resort Card Height
 			sortCardHeight();
 			return true;

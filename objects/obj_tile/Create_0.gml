@@ -28,12 +28,12 @@ function movable(bool) {
 	}
 }
 
-function setCard(cardId,forced = false) {
+function setCard(card,forced = false) {
 	//If not forcing card to space, return if space is already occupied.
 	if (!forced) {
 		if deployed != noone return false;
 	}
-	deployed = cardId;
+	deployed = card;
 	updateSprite();
 	return true;
 }
@@ -51,7 +51,7 @@ function updateSprite() {
 		min_scale = TILE_EMPTY_MIN_SCALE;
 		max_scale = TILE_EMPTY_MAX_SCALE;
 	} else {
-		sprite_index = asset_get_index("card" + string(deployed));
+		sprite_index = asset_get_index("card" + string(deployed.card_id));
 		image_xscale = TILE_CARD_MAX_SCALE;
 		image_yscale = TILE_CARD_MAX_SCALE;
 		min_scale = TILE_CARD_MIN_SCALE;
