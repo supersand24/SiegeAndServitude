@@ -1,18 +1,8 @@
-//Is the instance id of a selected item.
-selected = noone;
-
-enum GAME_PHASE {
-	PREP,
-	DRAW
-}
-
 enum SELECTED_TYPE {
 	NOTHING,
 	CARD,
 	TILE
 }
-
-phase = GAME_PHASE.PREP;
 
 loadCardDatabase();
 
@@ -23,7 +13,6 @@ function spawnPlayer() {
 }
 
 function spawnCard(playerNum,cardID) {
-	//return instance_create_layer(-500,-500,"Hand",getCard(card));
 	return instance_create_layer(-500,-500,"Other",obj_card,
 	{
 		sprite_index : asset_get_index("card" + string(cardID)),
@@ -131,6 +120,9 @@ spawnPlayer();
 
 //adds tiles to the map and the room
 createTiles();
+
+//Start Game
+startPhase(GAME_PHASE.PREP);
 
 function unit_move() {
 	if (selected != undefined) {

@@ -65,8 +65,3 @@ with (deck) {
 //Spawn Discard
 discard = instance_create_layer(50,room_height-5,"Table",obj_pile);
 discard.name = "Discard Pile"
-
-//Spawn Leader
-hand[0] = controller.spawnCard(playerNum, 1);
-leader_card = hand[0];
-sortCardHeight();

@@ -24,4 +24,10 @@ draw_set_valign(fa_middle)
 //Game Phase
 switch(phase) {
 	case GAME_PHASE.PREP: draw_text(x,(y-50),"PREP PHASE"); break;
+	case GAME_PHASE.DRAW: draw_text(x,(y-50),"DRAW PHASE"); break;
+	case GAME_PHASE.BUILD: draw_text(x,(y-50),"BUILD PHASE"); break;
+	case GAME_PHASE.SUMMON: draw_text(x,(y-50),"SUMMON PHASE"); break;
+	case GAME_PHASE.ACTION: draw_text(x,(y-50),"ACTION PHASE"); break;
+	case GAME_PHASE.BATTLE: draw_text(x,(y-50),"BATTLE PHASE"); break;
+	case GAME_PHASE.RECOVER: draw_text(x,(y-50),"RECOVER PHASE"); break;
 }

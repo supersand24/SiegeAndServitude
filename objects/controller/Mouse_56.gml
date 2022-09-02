@@ -8,11 +8,10 @@ if (selected != noone) {
 			//Card was able to be played.
 			if (player[0].deleteCardInHand(selected)) {
 				//Card was deleted, continue game actions.
-				switch(phase) {
-					case GAME_PHASE.PREP:
-						player[0].drawFromDeck(7);
-					break;
+				if (phase == GAME_PHASE.PREP) {
+					endPhase();
 				}
+				
 			} else {
 				//Card did not exist in player hand.
 			}
