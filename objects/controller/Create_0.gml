@@ -20,14 +20,15 @@ function spawnCard(playerNum,cardID) {
 		name : global.cardDatabase[# 0, cardID],
 		type : global.cardDatabase[# 1, cardID],
 		movement : real(global.cardDatabase[# 2, cardID]),
-		hp : real(global.cardDatabase[# 3, cardID]),
-		max_hp : real(global.cardDatabase[# 3, cardID]),
-		atk : real(global.cardDatabase[# 4, cardID]),
-		base_atk : real(global.cardDatabase[# 4, cardID]),
-		def : real(global.cardDatabase[# 5, cardID]),
-		base_def : real(global.cardDatabase[# 5, cardID]),
-		magDef : real(global.cardDatabase[# 6, cardID]),
-		base_magDef : real(global.cardDatabase[# 6, cardID])
+		range : real(global.cardDatabase[# 3, cardID]),
+		hp : real(global.cardDatabase[# 4, cardID]),
+		max_hp : real(global.cardDatabase[# 4, cardID]),
+		atk : real(global.cardDatabase[# 5, cardID]),
+		base_atk : real(global.cardDatabase[# 5, cardID]),
+		def : real(global.cardDatabase[# 6, cardID]),
+		base_def : real(global.cardDatabase[# 6, cardID]),
+		magDef : real(global.cardDatabase[# 7, cardID]),
+		base_magDef : real(global.cardDatabase[# 7, cardID])
 	});
 }
 

@@ -1,2 +1,29 @@
-Bob,Unit,1,10,10,10,10
-Bob with a Hat,Leader,1,10,10,10,10
+King Robert the Stalwart,Leader,1,1,10,5,4,4
+Peasant,Unit,1,1,1,1,1,1
+Smithy,Structure,0,0,5,0,2,0
+Soldier,Unit,2,1,1,2,2,1
+Archer,Unit,2,2,1,3,1,2
+Cavalier,Unit,4,1,2,3,2,1
+Bow & Arrow,Equip,0,2,0,0,0,0
+Sword,Equip,0,0,0,2,0,0
+Shield,Equip,0,0,0,0,0,0
+Heavy Soldier,Unit,1,1,3,2,3,1
+Pikeman,Unit,1,1,1,1,1,1
+Knight,Unit,4,1,4,4,3,2
+Court Mage,Unit,1,2,1,2,1,3
+Castle,Structure,0,2,20,0,4,4
+Magic Sword,Equip,0,0,0,0,0,0
+Archmage,Unit,1,2,1,5,1,4
+Stables,Structure,0,0,5,0,2,0
+Mages Tower,Structure,0,0,5,0,3,3
+Magic Blast,Spell,0,0,0,0,0,0
+Ion Storm,Spell,0,0,0,0,0,0
+Barrier,Spell,0,0,0,0,0,0
+Catapult,Structure,1,0,4,0,1,1
+Undead King,Leader,1,1,8,5,4,5
+Zombie,Unit,1,1,1,1,1,1
+Graveyard,Structure,0,0,10,0,1,5
+Skeleton,Unit,2,1,1,1,0,2
+Zombie Orge,Unit,1,1,3,2,2,3
+Skeleton Archer,Unit,1,3,1,1,0,2
+Rise the Undead,Spell,0,0,0,0,0,0

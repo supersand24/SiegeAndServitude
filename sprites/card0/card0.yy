@@ -25,10 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"744627b9-aa5e-4e72-9684-32fac2d97db8","path":"sprites/card0/card0.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"744627b9-aa5e-4e72-9684-32fac2d97db8","path":"sprites/card0/card0.yy",},"LayerId":{"name":"068411f8-fcdf-43e6-a9d9-a1015179b60c","path":"sprites/card0/card0.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"744627b9-aa5e-4e72-9684-32fac2d97db8","path":"sprites/card0/card0.yy",},"LayerId":{"name":"051302d1-28b7-4c76-9fa3-43a8b864ae51","path":"sprites/card0/card0.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"744627b9-aa5e-4e72-9684-32fac2d97db8","path":"sprites/card0/card0.yy",},"LayerId":{"name":"15e0be8e-1aa2-4983-8652-3a928d44e72f","path":"sprites/card0/card0.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"744627b9-aa5e-4e72-9684-32fac2d97db8","path":"sprites/card0/card0.yy",},"LayerId":{"name":"d97f28fa-f397-4579-851c-92749b9530b9","path":"sprites/card0/card0.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"744627b9-aa5e-4e72-9684-32fac2d97db8","path":"sprites/card0/card0.yy",},"LayerId":{"name":"be18e792-7618-45de-9185-d42fff6f3d5d","path":"sprites/card0/card0.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"card0","path":"sprites/card0/card0.yy",},"resourceVersion":"1.0","name":"744627b9-aa5e-4e72-9684-32fac2d97db8","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -68,15 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"border","resourceVersion":"1.0","name":"068411f8-fcdf-43e6-a9d9-a1015179b60c","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"skill","resourceVersion":"1.0","name":"051302d1-28b7-4c76-9fa3-43a8b864ae51","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"character","resourceVersion":"1.0","name":"15e0be8e-1aa2-4983-8652-3a928d44e72f","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"back","resourceVersion":"1.0","name":"d97f28fa-f397-4579-851c-92749b9530b9","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"card","resourceVersion":"1.0","name":"be18e792-7618-45de-9185-d42fff6f3d5d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Cards",
-    "path": "folders/Cards.yy",
+    "path": "folders/Sprites/Cards.yy",
   },
   "resourceVersion": "1.0",
   "name": "card0",

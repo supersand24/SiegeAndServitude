@@ -9,7 +9,7 @@ function drawFromDeck(num = 1) {
 	drawn = deck.drawCard(num);
 	for (var i = 0; i < array_length(drawn); i++) {
 		array_push(hand,controller.spawnCard(playerNum,drawn[i]));
-		show_debug_message(string(name) + " received a " + string(drawn[i].name) + " from their " + string(deck.name) + ".")
+		//show_debug_message(string(name) + " received a " + string(drawn[i].name) + " from their " + string(deck.name) + ".")
 	}
 	sortCardHeight();
 }
@@ -58,7 +58,7 @@ deck.name = "Deck";
 with (deck) {
 	var deck_size = DEFAULT_DECK_SIZE;
 	for (var i = 0; i < deck_size; i++) {
-		array_push(stack,0);
+		array_push(stack,round(clamp(random(6),1,6)));
 	}
 }
 
