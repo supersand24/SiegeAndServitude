@@ -15,7 +15,6 @@ function spawnPlayer() {
 function spawnCard(playerNum,cardID) {
 	return instance_create_layer(-500,-500,"Other",obj_card,
 	{
-		sprite_index : asset_get_index("card" + string(cardID)),
 		card_id : cardID,
 		name : global.cardDatabase[# 0, cardID],
 		type : global.cardDatabase[# 1, cardID],

@@ -14,7 +14,7 @@
 //Draws currently selected card.
 if (selected != noone) {
 	var selected_card_scale = TILE_CARD_MIN_SCALE;
-	draw_sprite_ext(asset_get_index("card" + string(selected.card_id)),0,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
+	draw_sprite_ext(spr_card,selected.card_id,mouse_x,mouse_y,selected_card_scale,selected_card_scale,0,c_white,1);
 }
 
 //Draws Various Text at Bottom of Screen.

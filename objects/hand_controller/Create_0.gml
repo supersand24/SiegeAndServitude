@@ -58,7 +58,8 @@ deck.name = "Deck";
 with (deck) {
 	var deck_size = DEFAULT_DECK_SIZE;
 	for (var i = 0; i < deck_size; i++) {
-		array_push(stack,round(clamp(random(6),1,6)));
+		//array_push(stack,round(clamp(random(6),1,6)));
+		array_push(stack,15);
 	}
 }
 

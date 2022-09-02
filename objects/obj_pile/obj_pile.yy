@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_card_back",
+    "path": "sprites/spr_card_back/spr_card_back.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
