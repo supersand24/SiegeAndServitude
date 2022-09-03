@@ -16,6 +16,7 @@ function startPhase(phase) {
 			show_debug_message("Prep phase begin.");
 			controller.player[0].hand[0] = controller.spawnCard(controller.player[0].playerNum, 0);
 			controller.player[0].leader_card = controller.player[0].hand[0];
+			controller.player[0].leader_card.owner = 0;
 			controller.player[0].sortCardHeight();
 		break;
 		case GAME_PHASE.DRAW:
