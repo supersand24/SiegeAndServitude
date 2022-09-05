@@ -29,6 +29,9 @@ if (selected != noone) {
 	}
 }
 
+//Current Player's Turn
+draw_text(x,y - (room_height-20), string(player[currentTurn].name) + "'s turn.");
+
 //Game Phase
 switch(phase) {
 	case GAME_PHASE.PREP: draw_text(x,(y-55),"PREP PHASE"); break;
@@ -37,5 +40,5 @@ switch(phase) {
 	case GAME_PHASE.SUMMON: draw_text(x,(y-55),"SUMMON PHASE"); break;
 	case GAME_PHASE.ACTION: draw_text(x,(y-55),"ACTION PHASE"); break;
 	case GAME_PHASE.BATTLE: draw_text(x,(y-55),"BATTLE PHASE"); break;
-	case GAME_PHASE.RECOVER: draw_text(x,(y-50),"RECOVER PHASE"); break;
+	case GAME_PHASE.RECOVER: draw_text(x,(y-55),"RECOVER PHASE"); break;
 }

@@ -43,6 +43,7 @@ function setCard(card,forced = false) {
 	card.map_y = map_y;
 	card.location = CARD_LOCATION.FIELD;
 	updateSprite();
+	controller.player[card.owner].deleteCardInHand(card);
 	return true;
 }
 

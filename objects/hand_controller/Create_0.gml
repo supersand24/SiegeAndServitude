@@ -43,27 +43,27 @@ function sortCardHeight() {
 	if (len > 0) {
 		if (len == 1) {
 			hand[0].y = (handBoundsBot-handBoundsTop)/2 + handBoundsTop;
-			hand[0].x = 5;
+			hand[0].x = x+5;
 		} else {
 			for (var i = 1; i < len+1; i++) {
 				hand[i-1].y = handBoundsTop + (handBoundsBot-handBoundsTop)/(len+1)*i;
-				hand[i-1].x = 5;
+				hand[i-1].x = x+5;
 			}
 		}
 	}
 }
 
 //Spawn Deck, and give deck cards.
-deck = instance_create_layer(5,room_height-5,"Table", obj_pile);
+deck = instance_create_layer(x+(25*image_xscale),room_height-5,"Table", obj_pile);
 deck.name = "Deck";
 with (deck) {
 	var deck_size = DEFAULT_DECK_SIZE;
 	for (var i = 0; i < deck_size; i++) {
 		//array_push(stack,round(clamp(random(6),1,6)));
-		array_push(stack,13);
+		array_push(stack,1);
 	}
 }
 
 //Spawn Discard
-discard = instance_create_layer(50,room_height-5,"Table",obj_pile);
+discard = instance_create_layer(x+(70*image_xscale),room_height-5,"Table",obj_pile);
 discard.name = "Discard Pile"

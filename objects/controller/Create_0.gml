@@ -1,23 +1,12 @@
-enum SELECTED_TYPE {
-	NOTHING,
-	CARD,
-	TILE
-}
-
 loadCardDatabase();
-
-function spawnPlayer() {
-	var playerNum = array_length(player);
-	player[playerNum] = instance_create_layer(0,room_height/2,"Other",hand_controller);
-	player[playerNum].playerNum = playerNum;
-}
 
 function spawnCard(playerNum,cardID) {
 	return instance_create_layer(-500,-500,"Other",obj_card,
 	{
+		owner : playerNum,
 		card_id : cardID,
 		name : global.cardDatabase[# 0, cardID],
-		type : global.cardDatabase[# 1, cardID],
+		type : real(global.cardDatabase[# 1, cardID]),
 		movement : real(global.cardDatabase[# 2, cardID]),
 		range : real(global.cardDatabase[# 3, cardID]),
 		hp : real(global.cardDatabase[# 4, cardID]),
@@ -32,7 +21,19 @@ function spawnCard(playerNum,cardID) {
 }
 
 //Spawn a player.
-spawnPlayer();
+var inst = instance_create_layer(0,room_height/2,"Other",hand_controller);
+inst.playerNum = 0;
+array_push(player,inst);
+
+var inst = instance_create_layer(room_width,room_height/2,"Other",hand_controller,{
+	playerNum : 1,
+	image_xscale : -1,
+	name : "Player 2"
+});
+//inst.playerNum = 1;
+//inst.image_xscale = -1;
+//inst.name = "Player 2";
+array_push(player,inst);
 
 var PDBTH = PIXEL_DIFFERENCE_BETWEEN_TILES_HORIZONTAL;
 var PDBTV = PIXEL_DIFFERENCE_BETWEEN_TILES_VERTICAL;

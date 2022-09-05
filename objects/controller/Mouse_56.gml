@@ -1,23 +1,27 @@
 /// @description Drop Held Object
-//Get the tile the mouse is hovering.
+
+//If holding onto a card.
 if (selected != noone) {
-	var tileAtMousePos = instance_position(mouse_x,mouse_y,obj_tile);
-	if (tileAtMousePos != noone) {
+	//See if the card trying to be played is in the right phase.
+	if (canPlayCardInCurrentPhase(selected)) {
 		//Get the tile the mouse is hovering.
-		if (tileAtMousePos.setCard(selected)) {
-			//Card was able to be played.
-			if (player[0].deleteCardInHand(selected)) {
-				//Card was deleted, continue game actions.
-				if (phase == GAME_PHASE.PREP) {
-					endPhase();
+		var tileAtMousePos = instance_position(mouse_x,mouse_y,obj_tile);
+		if (tileAtMousePos != noone) {
+			//If not forcing card to space, return if space is already occupied.
+			if (tileAtMousePos.deployed == noone) {
+				if (selected.location != undefined) {
+					controller.map[selected.map_x,selected.map_y].deployed = noone;
 				}
-				
-			} else {
-				//Card did not exist in player hand.
+				tileAtMousePos.deployed = selected;
+				selected.x = tileAtMousePos.x;
+				selected.y = tileAtMousePos.y;
+				selected.map_x = tileAtMousePos.map_x;
+				selected.map_y = tileAtMousePos.map_y;
+				selected.location = CARD_LOCATION.FIELD;
+				controller.player[selected.owner].deleteCardInHand(selected);
 			}
 		}
 	}
-
 	//Forgets what was being held.
 	selected = noone;
 }
