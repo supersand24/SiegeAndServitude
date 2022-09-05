@@ -20,20 +20,17 @@ function spawnCard(playerNum,cardID) {
 	});
 }
 
-//Spawn a player.
-var inst = instance_create_layer(0,room_height/2,"Other",hand_controller);
-inst.playerNum = 0;
-array_push(player,inst);
-
-var inst = instance_create_layer(room_width,room_height/2,"Other",hand_controller,{
+//Spawn the players.
+array_push(player,instance_create_layer(0,room_height/2,"Other",hand_controller,{
+	playerNum : 0,
+	image_xscale : 1,
+	name : "Player 1"
+}));
+array_push(player,instance_create_layer(room_width,room_height/2,"Other",hand_controller,{
 	playerNum : 1,
 	image_xscale : -1,
 	name : "Player 2"
-});
-//inst.playerNum = 1;
-//inst.image_xscale = -1;
-//inst.name = "Player 2";
-array_push(player,inst);
+}));
 
 var PDBTH = PIXEL_DIFFERENCE_BETWEEN_TILES_HORIZONTAL;
 var PDBTV = PIXEL_DIFFERENCE_BETWEEN_TILES_VERTICAL;

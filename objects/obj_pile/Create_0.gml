@@ -6,7 +6,7 @@ stack = [];
 /// @function			drawCard(num);
 /// @param {real} num	The number to draw.
 function drawCard(num) {
-	show_debug_message("Player drew " + string(num) + " card(s) from the " + string(name) + ".")
+	show_debug_message(controller.player[owner].name + " drew " + string(num) + " card(s) from the " + string(name) + ".")
 	//Ready a place for the cards to go.
 	var drawnCards = [];
 	//For each card

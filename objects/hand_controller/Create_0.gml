@@ -1,7 +1,3 @@
-playerNum = undefined;
-
-hand = [];
-
 handBoundsTop = 125;
 handBoundsBot = room_height-75;
 
@@ -54,8 +50,10 @@ function sortCardHeight() {
 }
 
 //Spawn Deck, and give deck cards.
-deck = instance_create_layer(x+(25*image_xscale),room_height-5,"Table", obj_pile);
-deck.name = "Deck";
+deck = instance_create_layer(x+(25*image_xscale),room_height-5,"Table", obj_pile, {
+	name : "Deck",
+	owner : playerNum
+});
 with (deck) {
 	var deck_size = DEFAULT_DECK_SIZE;
 	for (var i = 0; i < deck_size; i++) {
@@ -65,5 +63,7 @@ with (deck) {
 }
 
 //Spawn Discard
-discard = instance_create_layer(x+(70*image_xscale),room_height-5,"Table",obj_pile);
-discard.name = "Discard Pile"
+discard = instance_create_layer(x+(70*image_xscale),room_height-5,"Table",obj_pile, {
+	name : "Tomb",
+	owner : playerNum
+});

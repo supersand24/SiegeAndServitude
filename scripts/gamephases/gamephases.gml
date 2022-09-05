@@ -52,7 +52,9 @@ function startPhase(phase) {
 function endPhase() {
 	switch (controller.phase) {
 		case GAME_PHASE.PREP:
-			controller.player[0].drawFromDeck(7);
+			for (var i = 0; i < array_length(controller.player); i++) {
+				controller.player[i].drawFromDeck(7);
+			}
 			startPhase(GAME_PHASE.DRAW);
 		break;
 		case GAME_PHASE.DRAW:
@@ -82,7 +84,14 @@ function endPhase() {
 
 function canPlayCardInCurrentPhase(card) {
 	switch (card.type) {
-		case CARD_TYPE.LEADER: if controller.phase != GAME_PHASE.PREP return false; else endPhase(); break;
+		case CARD_TYPE.LEADER: if controller.phase != GAME_PHASE.PREP return false; else {
+			if (controller.currentTurn < array_length(controller.player) - 1)
+				controller.currentTurn++;
+			else {
+				controller.currentTurn = 0;
+				endPhase();
+			}
+		} break;
 		case CARD_TYPE.UNIT: if controller.phase != GAME_PHASE.SUMMON return false; else endPhase(); break;
 		case CARD_TYPE.STRUCTURE: if controller.phase != GAME_PHASE.BUILD return false; else endPhase(); break;
 		case CARD_TYPE.EQUIP: if controller.phase != GAME_PHASE.ACTION return false; else endPhase(); break;
