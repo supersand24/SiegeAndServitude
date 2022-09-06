@@ -1,11 +1,18 @@
 handBoundsTop = 125;
 handBoundsBot = room_height-75;
 
+function revealAllCards(reveal = true) {
+	for (var i = 0; i < array_length(hand); i++) {
+		hand[i].revealed = reveal;
+	}
+}
+
 function drawFromDeck(num = 1) {
 	drawn = deck.drawCard(num);
 	for (var i = 0; i < array_length(drawn); i++) {
 		var card = controller.spawnCard(playerNum,drawn[i]);
 		card.owner = playerNum;
+		card.revealed = (controller.currentTurn == playerNum);
 		array_push(hand,card);
 	}
 	sortCardHeight();
@@ -39,11 +46,11 @@ function sortCardHeight() {
 	if (len > 0) {
 		if (len == 1) {
 			hand[0].y = (handBoundsBot-handBoundsTop)/2 + handBoundsTop;
-			hand[0].x = x+5;
+			hand[0].x = x+(5*image_xscale);
 		} else {
 			for (var i = 1; i < len+1; i++) {
 				hand[i-1].y = handBoundsTop + (handBoundsBot-handBoundsTop)/(len+1)*i;
-				hand[i-1].x = x+5;
+				hand[i-1].x = x+(5*image_xscale);
 			}
 		}
 	}

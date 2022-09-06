@@ -3,6 +3,7 @@ loadCardDatabase();
 function spawnCard(playerNum,cardID) {
 	return instance_create_layer(-500,-500,"Other",obj_card,
 	{
+		image_angle : player[playerNum].image_angle,
 		owner : playerNum,
 		card_id : cardID,
 		name : global.cardDatabase[# 0, cardID],
@@ -24,11 +25,13 @@ function spawnCard(playerNum,cardID) {
 array_push(player,instance_create_layer(0,room_height/2,"Other",hand_controller,{
 	playerNum : 0,
 	image_xscale : 1,
+	image_angle : 270,
 	name : "Player 1"
 }));
 array_push(player,instance_create_layer(room_width,room_height/2,"Other",hand_controller,{
 	playerNum : 1,
 	image_xscale : -1,
+	image_angle : 90,
 	name : "Player 2"
 }));
 

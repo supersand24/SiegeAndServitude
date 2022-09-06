@@ -19,6 +19,7 @@ if (selected != noone) {
 				selected.map_y = tileAtMousePos.map_y;
 				selected.location = CARD_LOCATION.FIELD;
 				controller.player[selected.owner].deleteCardInHand(selected);
+				endPhase();
 			}
 		}
 	}

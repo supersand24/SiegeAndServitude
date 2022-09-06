@@ -20,6 +20,7 @@ function startPhase(phase) {
 				controller.player[i].leader_card = card;
 				controller.player[i].sortCardHeight();
 			}
+			player[0].revealAllCards(true);
 		break;
 		case GAME_PHASE.DRAW:
 			show_debug_message("Draw phase begin.");
@@ -52,10 +53,17 @@ function startPhase(phase) {
 function endPhase() {
 	switch (controller.phase) {
 		case GAME_PHASE.PREP:
-			for (var i = 0; i < array_length(controller.player); i++) {
-				controller.player[i].drawFromDeck(7);
+			controller.player[controller.currentTurn].revealAllCards(false);
+			if (controller.currentTurn < array_length(controller.player) - 1)
+				controller.currentTurn++;
+			else {
+				controller.currentTurn = 0;
+				for (var i = 0; i < array_length(controller.player); i++) {
+					controller.player[i].drawFromDeck(7);
+				}
+				startPhase(GAME_PHASE.DRAW);
 			}
-			startPhase(GAME_PHASE.DRAW);
+			controller.player[controller.currentTurn].revealAllCards(true);
 		break;
 		case GAME_PHASE.DRAW:
 			startPhase(GAME_PHASE.BUILD);
@@ -73,10 +81,12 @@ function endPhase() {
 			startPhase(GAME_PHASE.ACTION);
 		break;
 		case GAME_PHASE.RECOVER:
+			controller.player[controller.currentTurn].revealAllCards(false);
 			if (controller.currentTurn < array_length(controller.player) - 1)
 				controller.currentTurn++;
 			else
 				controller.currentTurn = 0;
+			controller.player[controller.currentTurn].revealAllCards(true);
 			startPhase(GAME_PHASE.DRAW);
 		break;
 	}	
@@ -84,17 +94,10 @@ function endPhase() {
 
 function canPlayCardInCurrentPhase(card) {
 	switch (card.type) {
-		case CARD_TYPE.LEADER: if controller.phase != GAME_PHASE.PREP return false; else {
-			if (controller.currentTurn < array_length(controller.player) - 1)
-				controller.currentTurn++;
-			else {
-				controller.currentTurn = 0;
-				endPhase();
-			}
-		} break;
-		case CARD_TYPE.UNIT: if controller.phase != GAME_PHASE.SUMMON return false; else endPhase(); break;
-		case CARD_TYPE.STRUCTURE: if controller.phase != GAME_PHASE.BUILD return false; else endPhase(); break;
-		case CARD_TYPE.EQUIP: if controller.phase != GAME_PHASE.ACTION return false; else endPhase(); break;
+		case CARD_TYPE.LEADER: if controller.phase != GAME_PHASE.PREP return false; break;
+		case CARD_TYPE.UNIT: if controller.phase != GAME_PHASE.SUMMON return false; break;
+		case CARD_TYPE.STRUCTURE: if controller.phase != GAME_PHASE.BUILD return false; break;
+		case CARD_TYPE.EQUIP: if controller.phase != GAME_PHASE.ACTION return false; break;
 	}
 	return true;
 }

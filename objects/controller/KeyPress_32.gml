@@ -1,2 +1,2 @@
-/// @description Draw Card
-player[0].drawFromDeck();
+/// @description [Testing Only] Draw Card
+player[controller.currentTurn].drawFromDeck(1);
