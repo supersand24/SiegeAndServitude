@@ -6,15 +6,22 @@ switch (async_load[? "type"]) {
 		
 		//Sync the client with the host data.
 		var username = buffer_create(1028, buffer_fixed, 1);
-		
 		buffer_write(username, buffer_u8, 0);
-		buffer_write(username, buffer_string, "supersand24");
-		
+		buffer_write(username, buffer_string, player[0].name);
 		network_send_packet(socket, username, buffer_get_size(username));
 		buffer_delete(username);
 		
 		//Create new hand controller here, as a client.
+		array_push(controller.player,instance_create_layer(room_width,room_height/2,"Other",hand_controller,{
+			name : "sqKweglord",
+			playerNum : 1,
+			image_xscale : -1,
+			image_angle : 90,
+			connection_type : CONNECTION_TYPE.CLIENT
+		}));
 		
+		//Start Game
+		startPhase(GAME_PHASE.PREP);
 	break;
 	
 	case network_type_disconnect:
@@ -30,8 +37,8 @@ switch (async_load[? "type"]) {
 		
 		switch(data) {
 			case 0:
-				var username = buffer_read(buffer, buffer_string);
-				show_message(username);
+				room_goto_next();
+				connected_player_names = [buffer_read(buffer, buffer_string)];
 			break;
 		}
 	break;

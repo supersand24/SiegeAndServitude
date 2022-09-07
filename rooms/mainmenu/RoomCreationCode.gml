@@ -37,8 +37,6 @@ instance_create_layer(50,150,"Buttons",obj_menu_button,{
 		if (global.client < 0) {
 			show_message("Error connecting to server.");
 			game_restart();
-		} else {
-			room_goto_next();
 		}
 	}
 })

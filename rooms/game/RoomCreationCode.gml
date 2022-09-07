@@ -63,7 +63,23 @@ if (global.server >= 0) {
 		playerNum : 0,
 		image_xscale : 1,
 		image_angle : 270,
-		name : "Player 1",
+		name : "supersand24",
+		connection_type : CONNECTION_TYPE.HOST
+	}));
+}
+if (global.client >= 0) {
+	array_push(controller.player,instance_create_layer(0,room_height/2,"Other",hand_controller,{
+		name : "sqKweglord",
+		playerNum : 0,
+		image_xscale : 1,
+		image_angle : 270,
+		connection_type : CONNECTION_TYPE.CLIENT
+	}));
+	array_push(controller.player,instance_create_layer(room_width,room_height/2,"Other",hand_controller,{
+		name : controller.connected_player_names[0],
+		playerNum : 1,
+		image_xscale : -1,
+		image_angle : 90,
 		connection_type : CONNECTION_TYPE.HOST
 	}));
 }
