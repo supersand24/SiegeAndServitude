@@ -3,6 +3,7 @@
     {"id":{"name":"viewCard","path":"sequences/viewCard/viewCard.yy",},"order":8,},
     {"id":{"name":"ui_character_generic_bar_endcap","path":"sprites/ui_character_generic_bar_endcap/ui_character_generic_bar_endcap.yy",},"order":4,},
     {"id":{"name":"ui_character_health_bar","path":"sprites/ui_character_health_bar/ui_character_health_bar.yy",},"order":3,},
+    {"id":{"name":"deprecated","path":"scripts/deprecated/deprecated.yy",},"order":4,},
     {"id":{"name":"hand_controller","path":"objects/hand_controller/hand_controller.yy",},"order":1,},
     {"id":{"name":"spr_tile","path":"sprites/spr_tile/spr_tile.yy",},"order":0,},
     {"id":{"name":"hideCard","path":"sequences/hideCard/hideCard.yy",},"order":9,},

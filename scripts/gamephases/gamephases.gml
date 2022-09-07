@@ -14,12 +14,6 @@ function startPhase(phase) {
 	switch (phase) {
 		case GAME_PHASE.PREP:
 			show_debug_message("Prep phase begin.");
-			for (var i = 0; i < array_length(controller.player); i++) {
-				var card = controller.spawnCard(i,0);
-				controller.player[i].hand[0] = card;
-				controller.player[i].leader_card = card;
-				controller.player[i].sortCardHeight();
-			}
 			player[0].revealAllCards(true);
 		break;
 		case GAME_PHASE.DRAW:

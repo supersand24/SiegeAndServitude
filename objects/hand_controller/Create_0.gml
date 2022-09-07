@@ -74,3 +74,8 @@ discard = instance_create_layer(x+(70*image_xscale),room_height-5,"Table",obj_pi
 	name : "Tomb",
 	owner : playerNum
 });
+
+//Leader Card
+//leader_card = controller.spawnCard(playerNum,0);
+//hand[0] = leader_card;
+//sortCardHeight();
